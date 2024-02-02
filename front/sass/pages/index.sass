@@ -4,7 +4,7 @@ $white: #FFFFFF
 $new-gray: #E8E8E8
 $blue: #005
 $blue-dark: #00003D
-$text-shadow-blue: 0px 0px 15px #0331F8, 0px 0px 15px #0331F8, 0px 4px 6px #000D23
+$text-shadow-blue: 0px 0px 15px #ff3184, 0px 0px 15px #ff3184, 0px 4px 6px #ff3184
 $text-shadow-min-dark: 2px 5px 4px rgba(0, 0, 0, 0.25)
 $dark: #111218
 
@@ -85,53 +85,6 @@ body
           background: url("../img/result/result-bg-mob-dark.png") no-repeat 0 0/contain
 
 
-.fav__page
-  &.en
-    .welcome
-      &__belt
-        img
-          content: url("../img/welcome/belt-desc-en.png")
-          @media screen and (max-width: 1024px)
-            content: url("../img/welcome/belt-tab-en.png")
-          @media screen and (max-width: 550px)
-            content: url("../img/welcome/belt-mob-en.png")
-    .detail
-      &__title
-        img
-          content: url("../img/detail/detail-title-desc-en.png")
-          @media screen and (max-width: 1024px)
-            content: url("../img/detail/detail-title-tab-en.png")
-          @media screen and (max-width: 550px)
-            content: url("../img/detail/detail-title-mob-en.png")
-
-
-body.light
-  .fav__page
-    &.en
-      .forecast
-        &__bg
-          background: url("../img/forecast/forecast-bg-desc-en.png") no-repeat 0 0/contain
-          @media screen and (max-width: 670px)
-            background: url("../img/forecast/forecast-bg-mob-en.png") no-repeat 0 0/contain
-      .result
-        &__bg
-          background: url("../img/result/result-bg-desc-en.png") no-repeat 0 0/contain
-          @media screen and (max-width: 550px)
-            background: url("../img/result/result-bg-mob-en.png") no-repeat 0 0/contain
-
-body.dark
-  .fav__page
-    &.en
-      .forecast
-        &__bg
-          background: url("../img/forecast/forecast-bg-desc-dark-en.png") no-repeat 0 0/contain
-          @media screen and (max-width: 670px)
-            background: url("../img/forecast/forecast-bg-mob-dark-en.png") no-repeat 0 0/contain
-      .result
-        &__bg
-          background: url("../img/result/result-bg-desc-dark-en.png") no-repeat 0 0/contain
-          @media screen and (max-width: 550px)
-            background: url("../img/result/result-bg-mob-dark-en.png") no-repeat 0 0/contain
 
 .fav__page
   -webkit-tap-highlight-color: transparent
@@ -335,7 +288,7 @@ body.dark
     position: relative
     z-index: 15
     max-width: 725px
-    margin: 0 auto -85px
+    margin: 0 auto -45px
   &__bg
     position: absolute
     width: 1930px
@@ -375,7 +328,7 @@ body.dark
     z-index: 4
 
 .forecast
-  padding: 590px 0 0 0
+  padding: 580px 0 0 0
   margin: -320px 0 0 0
   position: relative
   z-index: 1
@@ -387,7 +340,6 @@ body.dark
     transform: translateX(-50%)
     width: 2150px
     height: 1315px
-
   &__container
     position: relative
     max-width: 1000px
@@ -513,7 +465,7 @@ body.dark
     line-height: 11px
     text-align: center
     text-transform: uppercase
-    margin: 0 auto 90px
+    margin: 0 auto 140px
   &__link
     margin: 0 auto -20px
   &__question
@@ -542,17 +494,17 @@ body.dark
         &.active
           color: $white
           background: linear-gradient(0deg, rgba(255, 214, 0, 0.85) 0%, rgba(255, 214, 0, 0.85) 100%), rgba(0, 0, 0, 0.50)
-          box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.10) inset
+          box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.10) inset
           filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.20))
 
 .result
-  margin: -240px 0 0 0
-  padding: 490px 0 60px 0
+  margin: -370px 0 0 0
+  padding: 540px 0 60px 0
   position: relative
   &__bg
     position: absolute
-    width: 1920px
-    height: 1267px
+    width: 2040px
+    height: 1345px
     left: 50%
     top: 0
     z-index: 0
