@@ -17,7 +17,7 @@
 
     let i18nData = {};
     let userId;
-    userId = 10101010;
+    // userId = 10101010;
 
     const scorePrediction = {team : 1};
     const teamNamesById = [];
