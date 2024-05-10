@@ -25,8 +25,17 @@ $font-nunito-900: NunitoSans10pt-BlackItalic, sans-serif
 .overflow
   overflow-x: hidden !important
 
-body
+.hide
+  display: none !important
 
+.showBtn
+  animation: 5s ease-in-out showBtn
+
+.blockBtn
+  pointer-events: none
+  filter: grayscale(1)
+
+body
   img
     max-width: 100%
     height: auto
@@ -105,6 +114,7 @@ body
   height: 212px
   background: url("../img/btn-bg.png") no-repeat 0 0/contain
   position: relative
+  cursor: pointer
   z-index: 2
   @media screen and (max-width: 550px)
     width: 415px
@@ -207,11 +217,23 @@ body
         font-size: 14px
         line-height: 28px
       span
+        font-family: $font-suisse-med
         display: block
         padding-left: 15px
       .retreat1
         padding-left: 30px
-
+      .circle
+        padding-left: 30px
+        &:before
+          content: ''
+          width: 5px
+          height: 5px
+          background: $white
+          border-radius: 50%
+          display: inline-block
+          margin: 0 4px 2px 0
+      strong
+        font-family: $font-suisse-med
 
 
 .welcome
@@ -233,7 +255,7 @@ body
     max-width: 1120px
     margin: 0 auto
   &__title
-    margin: -180px 0 30px 0
+    margin: -150px 0 30px 0
     position: relative
     z-index: 10
     font-family: $font-nunito-600
@@ -260,7 +282,7 @@ body
     margin: 0 auto
   &__sub
     position: relative
-    z-index: 15
+    z-index: 10
     font-family: $font-nunito-800
     font-size: 24px
     line-height: 33px
@@ -271,7 +293,7 @@ body
     margin: 0 auto 25px
   &__text
     position: relative
-    z-index: 15
+    z-index: 10
     font-size: 17px
     line-height: 25px
     color: $white
@@ -286,7 +308,7 @@ body
       text-align: center
   &__title
     position: relative
-    z-index: 15
+    z-index: 10
     max-width: 725px
     margin: 0 auto -45px
   &__bg
@@ -307,7 +329,7 @@ body
     margin: 0 auto 65px
   &__item
     position: relative
-    z-index: 15
+    z-index: 10
     display: flex
     flex-direction: column
     align-items: center
@@ -326,6 +348,10 @@ body
   &__drop
     position: relative
     z-index: 4
+    .custom-drop-txt-wrap
+      @media screen and (min-width: 600px)
+        height: auto
+        overflow-y: auto
 
 .forecast
   padding: 580px 0 0 0
@@ -420,6 +446,8 @@ body
     background: url("../img/forecast/btn-bg.svg") no-repeat 0 0/contain
     @media screen and (max-width: 670px)
       background: url("../img/forecast/btn-bg-mob.svg") no-repeat 0 0/contain
+    span
+      font-family: $font-nunito-900
     &::after
       content: ''
       position: absolute
@@ -465,9 +493,11 @@ body
     line-height: 11px
     text-align: center
     text-transform: uppercase
-    margin: 0 auto 140px
+    margin: auto
+    span
+      font-family: $font-nunito-600
   &__link
-    margin: 0 auto -20px
+    margin: 160px auto -20px
   &__question
     display: flex
     justify-content: center
@@ -516,7 +546,7 @@ body
     display: flex
     flex-direction: column
     position: relative
-    z-index: 20
+    z-index: 10
   &__link
     margin: -60px auto 0
   &__sub
@@ -574,6 +604,7 @@ body
     padding: 3px 15px 3px 3px
     position: relative
     max-height: 414px
+    min-height: 414px
     font-size: 18px
     background: transparent
     &::-webkit-scrollbar
@@ -594,12 +625,15 @@ body
       width: 25%
       display: flex
       align-items: center
-      padding: 10.7px 17px
+      padding: 10.7px 3px 10.7px 17px
+      text-transform: uppercase
       color: #00003D
       text-align: start
       background: $white
+      word-break: break-word
       span
         font-family: $font-nunito-800
+        margin-left: 5px
       &:nth-child(1)
         width: 25%
       &:nth-child(2)
@@ -626,7 +660,17 @@ body
       border: 1px solid $white
     &:last-child
       margin-bottom: 0
-
+    ._yourPlace
+      .tableResults__body-col:nth-child(1)::after
+        content: '(ti)'
+        font-family: $font-nunito-800
+        white-space: nowrap
+        color: $magenta
+        margin: 0 0 0 2px
+        display: inline-block
+        font-size: 12px
+        @media screen and (max-width: 670px)
+          font-size: 7px
 
 
 @keyframes lightWelcome
@@ -649,7 +693,13 @@ body
   100%
     transform: rotate3d(0, 1, 0, -30deg)
 
-
+@keyframes showBtn
+  from
+    opacity: 0
+    pointer-events: none
+  to
+    opacity: 1
+    pointer-events: auto
 
 
 
