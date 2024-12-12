@@ -11,13 +11,46 @@
 
     const hrLeng = document.querySelector('#hrLeng');
 
-    let locale = 'hr';
+    let locale = sessionStorage.getItem('locale') || 'en';
+
+    function setState(newLocale) {
+        locale = newLocale;
+        sessionStorage.setItem('locale', locale);
+    }
+    function toggleState() {
+        const newLocale = locale === 'en' ? 'hr' : 'en';
+        setState(newLocale);
+        window.location.reload()
+    }
+    document.querySelector('.en-btn').addEventListener('click', () => {
+        toggleState();
+
+    });
 
     if (hrLeng) locale = 'hr';
 
+    document.querySelector(".fav__page").classList.add(locale)
+
     let i18nData = {};
-    let userId;
+    let userId = Number(sessionStorage.getItem('id')) || null;
+    console.log(userId)
     // userId = 10101010;
+
+    document.querySelector(".betTrue").addEventListener("click", () =>{
+        sessionStorage.setItem('id', 1481239)
+        window.location.reload()
+    })
+    document.querySelector(".betFalse").addEventListener("click", () =>{
+        sessionStorage.setItem('id', 1481187)
+        window.location.reload()
+    })
+    document.querySelector(".unAuth").addEventListener("click", () =>{
+        sessionStorage.removeItem('id')
+        window.location.reload()
+    })
+    document.querySelector(".menu-btn").addEventListener("click", () =>{
+        document.querySelector(".menu-btns").classList.toggle("hide")
+    })
 
     const scorePrediction = {team : 1};
     const teamNamesById = [];
@@ -128,6 +161,7 @@
 
     function populateUsersTable(users, currentUserId, table) {
         table.innerHTML = '';
+        console.log(users)
         if (users && users.length) {
             const currentUser = userId && users.find(user => user.userid === currentUserId);
             if (currentUser) {
@@ -167,7 +201,7 @@
         if (team) {
             forecastLogDiv.classList.remove('hide');
             const lastPredictionLabel = document.getElementById('roundWinner');
-            lastPredictionLabel.innerHTML = team;
+            lastPredictionLabel.innerHTML = `<br>${team}`;
         } else {
             forecastLogDiv.classList.add('hide');
         }
@@ -202,12 +236,33 @@
         return "**" + userId.toString().slice(2);
     }
 
-    let checkUserAuth = () => {
-        if (userId) {
-            unauthMsgs.forEach(item => item.classList.add('hide'));
-            youAreInBtns.forEach(item => item.classList.remove('hide'));
-        }
+    // let checkUserAuth = () => {
+    //     if (userId) {
+    //         unauthMsgs.forEach(item => item.classList.add('hide'));
+    //         youAreInBtns.forEach(item => item.classList.remove('hide'));
+    //     }
+    // }
+
+    function checkUserAuth() {
+        return request(`/favuser/${userId}?nocache=1`)
+            .then(res => {
+
+                if (res.userid) {
+                    console.log(userId === res.userid)
+                    if(res.userid == userId){
+                        confirmBet(res.betConfirmed)
+                        lastPredict(res.team)
+                    }
+
+                    unauthMsgs.forEach(item => item.classList.add('hide'));
+                    youAreInBtns.forEach(item => item.classList.remove('hide'));
+                } else {
+                    unauthMsgs.forEach(item => item.classList.remove('hide'));
+                    youAreInBtns.forEach(item => item.classList.add('hide'));
+                }
+            })
     }
+
 
     //custom drop
     function initDrop() {
@@ -261,6 +316,23 @@
     loadTranslations()
         .then(init);
 
+    function confirmBet(bet){
+        const betWrap = document.querySelector(".forecast__question")
+        const betTrue = document.querySelector(".forecast__question-item-green")
+        const betFalse = document.querySelector(".forecast__question-item-orange")
+        betWrap.classList.remove("hide")
+        betTrue.classList.remove("active")
+        betFalse.classList.remove("active")
+        // console.log(betWrap)
+
+        if(bet){
+            betTrue.classList.add("active")
+        }else{
+            betFalse.classList.add("active")
+        }
+    }
+
+
     let mainPage = document.querySelector('.fav__page');
     setTimeout(() => mainPage.classList.add('overflow'), 1000);
 
@@ -268,5 +340,11 @@
     if(currentDate >= PROMO_END_DATE) {
         predictionBtn.classList.add('blockBtn');
     }
+
+    const blackBtn = document.querySelector(".black-btn")
+
+    blackBtn.addEventListener("click", () =>{
+        document.body.classList.toggle("dark")
+    })
 
 })();

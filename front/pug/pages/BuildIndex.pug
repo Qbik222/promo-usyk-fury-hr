@@ -1,25 +1,25 @@
 .fav__page#predictor
+  .menu
+    button.menu-btn menu
+    .menu-btns
+      button.black-btn dark
+      button.en-btn en
+      button.betTrue betTrue
+      button.betFalse betFalse
+      button.unAuth unAuth
   .welcome
     .welcome__container
-      //.welcome__light
-      //  picture
-      //    source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-desc.png")
-      //    source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-tab.png")
-      //    source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-mob.png")
-      //    img(src="https://fav-prom.com/html/guessfight-hr/img/welcome/light-desc.png" alt="Favbet")
-      //.welcome__belt
-      //  picture
-      //    source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-desc.png")
-      //    source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-tab.png")
-      //    source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-mob.png")
-      //    img(src="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-desc.png" alt="Favbet")
       .welcome__img
-          picture
+          picture.uk
             source(media="(min-width: 1025px) " srcset="../img/welcome/welcome-title-desc.png")
             source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/welcome/welcome-title-tab.png")
             source(media="(max-width: 550px)" srcset="../img/welcome/welcome-title-mob.png")
             img(src="../img/welcome/welcome-title-desc.png" alt="Favbet")
-      .welcome__text(data-translate="welcomeText")
+          picture.en
+            source(media="(min-width: 1025px) " srcset="../img/welcome/welcome-title-desc-en.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/welcome/welcome-title-tab-en.png")
+            source(media="(max-width: 550px)" srcset="../img/welcome/welcome-title-mob-en.png")
+            img(src="../img/welcome/welcome-title-desc-en.png" alt="Favbet")
       .welcome__title(data-translate='welcomeTitle')
       a(href='/login/' role='button' data-translate='loginBtn').welcome__btn.custom-btn.unauth-msg
       a(href='/sports/event/boxing/39915601/' role='button' data-translate='betBtn').welcome__btn.custom-btn.took-part.hide
@@ -27,12 +27,7 @@
     .detail__container
       .detail__sub(data-translate='detailSub')
       .detail__text(data-translate='detailTxt')
-      .detail__title
-        picture
-          source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/guessfight-hr/img/detail/detail-title-desc.png")
-          source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/guessfight-hr/img/detail/detail-title-tab.png")
-          source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/guessfight-hr/img/detail/detail-title-mob.png")
-          img(src="https://fav-prom.com/html/guessfight-hr/img/detail/detail-title-desc.png" alt="Favbet")
+      .detail__title(data-translate="detailsTitle") Kako sudjelovati?
       .detail__list
         .detail__bg
         .detail__item
@@ -59,7 +54,6 @@
               source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/guessfight-hr/img/detail/detail-num3-mob.png")
               img(src="https://fav-prom.com/html/guessfight-hr/img/detail/detail-num3-desc.png" alt="Favbet")
           .detail__item-text(data-translate='detail-3')
-
       details.custom-drop.detail__drop
           summary.custom-drop-title(data-translate="detailDropTitle")
           .custom-drop-txt
@@ -68,6 +62,7 @@
     .forecast__bg
     .forecast__container
       .forecast__wrap
+        .forecast__title(data-translate="forecastTitle")
         .forecast__list
           button.forecast__item._active(data-team-id="1") 1 #[span(data-translate="round-1")]
           button.forecast__item(data-team-id="2") 2 #[span(data-translate="round")]
@@ -85,12 +80,12 @@
       .forecast__des(data-translate="forecastLast").hide
       a(href='/login/' role='button' data-translate='loginBtn').forecast__link.custom-btn.unauth-msg
       .forecast__link.custom-btn.took-part.predictBtn.hide(role='button' data-translate='partBtn')
-
       .forecast__question
         .forecast__question-item.forecast__question-item-green(data-translate='forecastTrue')
-        .forecast__question-item.forecast__question-item-orange.active(data-translate='forecastFalse')
+        .forecast__question-item.forecast__question-item-orange(data-translate='forecastFalse')
   .result
     .result__bg
+    .result__title(data-translate="resultsTitle")
     .result__container
       .tableResults
         .tableResults__container

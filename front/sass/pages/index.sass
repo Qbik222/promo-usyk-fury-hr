@@ -1,17 +1,15 @@
 $magenta: #ff267e
 $green: #05C48A
 $white: #FFFFFF
-$new-gray: #E8E8E8
 $blue: #005
 $blue-dark: #00003D
-$text-shadow-blue: 0px 0px 15px #ff3184, 0px 0px 15px #ff3184, 0px 4px 6px #ff3184
 $text-shadow-min-dark: 2px 5px 4px rgba(0, 0, 0, 0.25)
 $dark: #111218
 
 
 
 //new
-$font-suisse-semb: SuisseIntl-SemiBold, sans-serif
+//$font-suisse-semb: SuisseIntl-SemiBold, sans-serif
 $font-suisse-reg: SuisseIntl-Regular, sans-serif
 $font-suisse-med: SuisseIntl-Medium, sans-serif
 
@@ -20,6 +18,21 @@ $font-nunito-600: NunitoSans10pt-SemiBoldItalic, sans-serif
 $font-nunito-700: NunitoSans10pt-BoldItalic, sans-serif
 $font-nunito-800: NunitoSans10pt-ExtraBoldItalic, sans-serif
 $font-nunito-900: NunitoSans10pt-BlackItalic, sans-serif
+
+.menu
+  background: white
+  color: black
+  font-size: 12px
+  position: fixed
+  top: 0
+  z-index: 10
+  right: 0
+  display: flex
+  flex-direction: column
+  max-width: 60px
+  &-btns
+    display: flex
+    flex-direction: column
 
 
 .overflow
@@ -46,52 +59,58 @@ body
     .fav__page
       background: $blue-dark
     .welcome
-      background: url("https://fav-prom.com/html/guessfight-hr/img/welcome/welcome-bg-desc.jpg") no-repeat 50% -50px/cover
+      background: url("../img/welcome/welcome-bg-desc.jpg") no-repeat 50% -50px/cover
       @media screen and (max-width: 1024px)
-        background: url("https://fav-prom.com/html/guessfight-hr/img/welcome/welcome-bg-tab.jpg") no-repeat 50% 0/cover
-      @media screen and (max-width: 550px)
-        background: url("https://fav-prom.com/html/guessfight-hr/img/welcome/welcome-bg-mob.jpg") no-repeat 50% 0/cover
+        background: url("../img/welcome/welcome-bg-tab.jpg") no-repeat 50% -40px/cover
+      @media screen and (max-width: 600px)
+        background: url("../img/welcome/welcome-bg-mob.jpg") no-repeat 50% 40%/cover
+      @media screen and (max-width: 450px)
+        background-size: 450px auto
     .detail
       &__bg
-        background: url("https://fav-prom.com/html/guessfight-hr/img/detail/detail-bg-desc.png") no-repeat 0 0/contain
-        @media screen and (max-width: 550px)
-          background: url("https://fav-prom.com/html/guessfight-hr/img/detail/detail-bg-mob.png") no-repeat 0 0/contain
+        background: url("../img/detail/detail-bg-desc.png") no-repeat 0 0/contain
+        @media screen and (max-width: 600px)
+          background: url("../img/detail/detail-bg-mob.png") no-repeat 0 0/contain
     .forecast
       &__bg
-        background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/forecast-bg-desc.png") no-repeat 0 0/contain
+        background: url("../img/forecast/forecast-bg-desc.png") no-repeat 0 0/contain
         @media screen and (max-width: 670px)
-          background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/forecast-bg-mob.png") no-repeat 0 0/contain
+          background: url("../img/forecast/forecast-bg-mob.png") no-repeat 0 0/contain
     .result
       &__bg
-        background: url("https://fav-prom.com/html/guessfight-hr/img/result/result-bg-desc.png") no-repeat 0 0/contain
-        @media screen and (max-width: 550px)
-          background: url("https://fav-prom.com/html/guessfight-hr/img/result/result-bg-mob.png") no-repeat 0 0/contain
+        background: url("../img/result/result-bg-desc.png") no-repeat 0 0/contain
+        @media screen and (max-width: 600px)
+          background: url("../img/result/result-bg-mob.png") no-repeat 0 0/contain
 
   &.dark
     background: $dark
     .fav__page
       background: $dark
     .welcome
-      background: url("https://fav-prom.com/html/guessfight-hr/img/welcome/welcome-bg-desc-dark.jpg") no-repeat 50% -50px/cover
+      background: url("../img/welcome/welcome-bg-desc-dark.jpg") no-repeat 50% -50px/cover
       @media screen and (max-width: 1024px)
-        background: url("https://fav-prom.com/html/guessfight-hr/img/welcome/welcome-bg-tab-dark.jpg") no-repeat 50% 0/cover
-      @media screen and (max-width: 550px)
-        background: url("https://fav-prom.com/html/guessfight-hr/img/welcome/welcome-bg-mob-dark.jpg") no-repeat 50% 0/cover
+        background: url("../img/welcome/welcome-bg-tab-dark.jpg") no-repeat 50% -40px/cover
+      @media screen and (max-width: 600px)
+        background: url("../img/welcome/welcome-bg-mob-dark.jpg") no-repeat 50% 40%/cover
+        &::before
+          background: linear-gradient(0deg, $dark 0%, transparent 100%)
+      @media screen and (max-width: 450px)
+        background-size: 450px auto
     .detail
       &__bg
-        background: url("https://fav-prom.com/html/guessfight-hr/img/detail/detail-bg-desc-dark.png") no-repeat 0 0/contain
-        @media screen and (max-width: 550px)
-          background: url("https://fav-prom.com/html/guessfight-hr/img/detail/detail-bg-mob-dark.png") no-repeat 0 0/contain
+        background: url("../img/detail/detail-bg-desc-dark.png") no-repeat 0 0/contain
+        @media screen and (max-width: 600px)
+          background: url("../img/detail/detail-bg-mob-dark.png") no-repeat 0 0/contain
     .forecast
       &__bg
-        background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/forecast-bg-desc-dark.png") no-repeat 0 0/contain
+        background: url("../img/forecast/forecast-bg-desc-dark.png") no-repeat 0 0/contain
         @media screen and (max-width: 670px)
-          background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/forecast-bg-mob-dark.png") no-repeat 0 0/contain
+          background: url("../img/forecast/forecast-bg-mob-dark.png") no-repeat 0 0/contain
     .result
       &__bg
-        background: url("https://fav-prom.com/html/guessfight-hr/img/result/result-bg-desc-dark.png") no-repeat 0 0/contain
-        @media screen and (max-width: 550px)
-          background: url("https://fav-prom.com/html/guessfight-hr/img/result/result-bg-mob-dark.png") no-repeat 0 0/contain
+        background: url("../img/result/result-bg-desc-dark.png") no-repeat 0 0/contain
+        @media screen and (max-width: 600px)
+          background: url("../img/result/result-bg-mob-dark.png") no-repeat 0 0/contain
 
 
 
@@ -112,11 +131,11 @@ body
   justify-content: center
   width: 505px
   height: 212px
-  background: url("https://fav-prom.com/html/guessfight-hr/img/btn-bg.png") no-repeat 0 0/contain
+  background: url("../img/btn-bg.png") no-repeat 0 0/contain
   position: relative
   cursor: pointer
   z-index: 2
-  @media screen and (max-width: 550px)
+  @media screen and (max-width: 600px)
     width: 415px
     height: 174px
     font-size: 21px
@@ -132,7 +151,7 @@ body
     z-index: -1
     width: 100%
     height: 100%
-    background: url("https://fav-prom.com/html/guessfight-hr/img/btn-bg-hover.png") no-repeat 0 0/contain
+    background: url("../img/btn-bg-hover.png") no-repeat 0 0/contain
     opacity: 0
     transition: opacity .3s ease
   &:hover:after
@@ -169,7 +188,7 @@ body
     position: relative
     border-top: 1px solid $white
     border-bottom: 1px solid $white
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       font-size: 17px
       line-height: 17px
     &:before,&:after
@@ -181,7 +200,7 @@ body
       position: absolute
       top: 50%
       z-index: 3
-      @media screen and (max-width: 550px)
+      @media screen and (max-width: 600px)
         height: 16px
   summary::-webkit-details-marker
     display: none
@@ -191,7 +210,7 @@ body
     cursor: default
     background: rgba(255, 255, 255, 0.10)
     padding: 30px
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       padding: 20px 20px
     &-wrap
       height: 400px
@@ -202,7 +221,7 @@ body
       color: $white
       letter-spacing: .02em
       padding: 0 20px 0 0
-      @media screen and (max-width: 550px)
+      @media screen and (max-width: 600px)
         padding: 0 15px 0 0
       &::-webkit-scrollbar
         width: 4px
@@ -237,45 +256,37 @@ body
 
 
 .welcome
-  padding: 0 0 150px
+  padding: 40px 0 0 0
+  height: 900px
+  &__img
+    max-width: 950px
+    margin-bottom: auto
+    .uk
+      display: block
+    .en
+      display: none
   &__container
     max-width: 1530px
     padding: 0 15px
     margin: 0 auto
     position: relative
-  &__light
-    transform-origin: top center
-    position: absolute
-    width: 100%
-    height: 850px
-    top: 0
-    left: 0
-    animation: 5s lightWelcome ease infinite
-  &__belt
-    max-width: 1120px
-    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 100%
   &__title
-    margin: 0 0 30px 0
-    position: relative
-    z-index: 10
-    font-family: $font-nunito-600
+    font-size: 40px
+    line-height: 70px
+    background: $magenta
+    padding: 3px 20px 2px
     color: $white
-    font-size: 54px
-    line-height: 54px
-    text-shadow: $text-shadow-blue
-    text-transform: uppercase
-    text-align: center
-    br
-      display: none
-    span
-      font-size: 74px
-      line-height: 74px
-      font-family: $font-nunito-900
+    font-family: $font-suisse-med
+    margin-bottom: 50px
   &__btn
     margin: -50px auto 0
 
 .detail
-  margin: -120px 0 0 0
+  //margin: -120px 0 0 0
   &__container
     max-width: 1270px
     padding: 0 15px
@@ -307,10 +318,15 @@ body
       font-style: italic
       text-align: center
   &__title
+    font-size: 50px
+    line-height: 48px
+    color: $white
+    font-family: $font-nunito-900
+    text-transform: uppercase
+    text-align: center
+    text-shadow: 0px 0px 15px #FF267E, 0px 0px 15px #FF267E, 0px 3px 0px #FF3184
+    z-index: 2
     position: relative
-    z-index: 10
-    max-width: 725px
-    margin: 0 auto -45px
   &__bg
     position: absolute
     width: 1930px
@@ -359,6 +375,19 @@ body
   position: relative
   z-index: 1
   height: 1315px
+  &__title
+    font-size: 70px
+    line-height: 58px
+    color: $white
+    max-width: 600px
+    font-family: $font-nunito-900
+    text-transform: uppercase
+    position: absolute
+    text-align: center
+    top: -25px
+    left: 50%
+    transform: translate(-50%, -100%)
+    text-shadow: 0px 0px 15px #FF267E, 0px 0px 15px #FF267E, 0px 3px 0px #FF3184
   &__bg
     position: absolute
     top: 0
@@ -393,9 +422,9 @@ body
     line-height: 20px
     font-size: 20px
     text-transform: uppercase
-    background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-bg-big.svg") no-repeat 0 0/contain
+    background: url("../img/forecast/btn-bg-big.svg") no-repeat 0 0/contain
     @media screen and (max-width: 670px)
-      background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-bg-big-mob.svg") no-repeat 0 0/contain
+      background: url("../img/forecast/btn-bg-big-mob.svg") no-repeat 0 0/contain
     &::after
       content: ''
       position: absolute
@@ -404,7 +433,7 @@ body
       height: 102%
       top: 0
       left: 0
-      background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-big-hover.svg") no-repeat 0 0/contain
+      background: url("../img/forecast/btn-big-hover.svg") no-repeat 0 0/contain
       opacity: 0
       transition: opacity .3s ease
     &::before
@@ -415,11 +444,11 @@ body
       height: 102%
       top: 0
       left: 0
-      background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-big-active.svg") no-repeat 0 0/contain
+      background: url("../img/forecast/btn-big-active.svg") no-repeat 0 0/contain
       opacity: 0
       transition: opacity .3s ease
       @media screen and (max-width: 670px)
-        background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-big-active-mob.svg") no-repeat 0 0/contain
+        background: url("../img/forecast/btn-big-active-mob.svg") no-repeat 0 0/contain
     &:hover::after
       opacity: 1
       @media screen and (max-width: 670px)
@@ -443,9 +472,9 @@ body
     line-height: 20px
     font-size: 20px
     text-transform: uppercase
-    background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-bg.svg") no-repeat 0 0/contain
+    background: url("../img/forecast/btn-bg.svg") no-repeat 0 0/contain
     @media screen and (max-width: 670px)
-      background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-bg-mob.svg") no-repeat 0 0/contain
+      background: url("../img/forecast/btn-bg-mob.svg") no-repeat 0 0/contain
     span
       font-family: $font-nunito-900
     &::after
@@ -456,7 +485,7 @@ body
       height: 100%
       top: 0
       left: 0
-      background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-hover.svg") no-repeat 0 0/contain
+      background: url("../img/forecast/btn-hover.svg") no-repeat 0 0/contain
       opacity: 0
       transition: opacity .3s ease
     &::before
@@ -467,11 +496,11 @@ body
       height: 100%
       top: 0
       left: 0
-      background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-active.svg") no-repeat 0 0/contain
+      background: url("../img/forecast/btn-active.svg") no-repeat 0 0/contain
       opacity: 0
       transition: opacity .3s ease
       @media screen and (max-width: 670px)
-        background: url("https://fav-prom.com/html/guessfight-hr/img/forecast/btn-active-mob.svg") no-repeat 0 0/contain
+        background: url("../img/forecast/btn-active-mob.svg") no-repeat 0 0/contain
     &:hover::after
       opacity: 1
       @media screen and (max-width: 670px)
@@ -483,10 +512,10 @@ body
     &.active::before
       opacity: 1
   &__des
-    max-width: 180px
+    max-width: 200px
     background: rgba(0, 0, 0, 0.69)
     border-radius: 8px
-    padding: 2px 3px 1px
+    padding: 5px 5px 3px
     color: $white
     font-family: $font-nunito-600
     font-size: 9px
@@ -531,6 +560,17 @@ body
   margin: -370px 0 0 0
   padding: 540px 0 60px 0
   position: relative
+  &__title
+    font-size: 70px
+    line-height: 70px
+    color: $white
+    font-family: $font-nunito-900
+    text-transform: uppercase
+    text-align: center
+    text-shadow: 0px 0px 15px #FF267E, 0px 0px 15px #FF267E, 0px 3px 0px #FF3184
+    z-index: 2
+    margin: -100px 0 30px 0
+    position: relative
   &__bg
     position: absolute
     width: 2040px
@@ -702,4 +742,13 @@ body
     pointer-events: auto
 
 
+// en styles
+
+.fav__page.en
+  .welcome
+    &__img
+      .uk
+        display: none
+      .en
+        display: block
 
