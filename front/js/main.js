@@ -251,7 +251,6 @@
                     console.log(userId === res.userid)
                     if(res.userid == userId){
                         confirmBet(res.betConfirmed)
-                        lastPredict(res.team)
                     }
 
                     unauthMsgs.forEach(item => item.classList.add('hide'));

@@ -21,7 +21,7 @@
             source(media="(max-width: 550px)" srcset="./img/welcome/welcome-title-mob-en.png")
             img(src="./img/welcome/welcome-title-desc-en.png" alt="Favbet")
       .welcome__title(data-translate='welcomeTitle')
-      a(href='/login/' role='button' data-translate='loginBtn').welcome__btn.custom-btn.unauth-msg
+      a(href='/login/' role='button' data-translate='loginBtn').welcome__btn.custom-btn.unauth-msg.hide
       a(href='/sports/event/boxing/39915601/' role='button' data-translate='betBtn').welcome__btn.custom-btn.took-part.hide
   .detail
     .detail__container
@@ -78,7 +78,7 @@
           button.forecast__item(data-team-id="12") 12 #[span(data-translate="round")]
           button.forecast__all(data-team-id="13" data-translate="fullRound")
       .forecast__des(data-translate="forecastLast").hide
-      a(href='/login/' role='button' data-translate='loginBtn').forecast__link.custom-btn.unauth-msg
+      a(href='/login/' role='button' data-translate='loginBtn').forecast__link.custom-btn.unauth-msg.hide
       .forecast__link.custom-btn.took-part.predictBtn.hide(role='button' data-translate='partBtn')
       .forecast__question
         .forecast__question-item.forecast__question-item-green(data-translate='forecastTrue')
@@ -97,7 +97,7 @@
                 .tableResults__head-col(data-translate="tableResults_head-points")
                 .tableResults__head-col(data-translate="tableResults_head-prize")
             .tableResults__body
-      a(href='/login/' role='button' data-translate='loginBtn').result__link.custom-btn.unauth-msg
+      a(href='/login/' role='button' data-translate='loginBtn').result__link.custom-btn.unauth-msg.hide
       a(href='/sports/event/boxing/39915601/' role='button' data-translate='betBtn').result__link.custom-btn.took-part.hide
       .result__sub(data-translate='resultSub')
       details.custom-drop.result__drop
