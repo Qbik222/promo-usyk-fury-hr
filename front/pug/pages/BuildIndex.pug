@@ -1,18 +1,25 @@
 .fav__page#predictor
   .welcome
     .welcome__container
-      .welcome__light
-        picture
-          source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-desc.png")
-          source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-tab.png")
-          source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-mob.png")
-          img(src="https://fav-prom.com/html/guessfight-hr/img/welcome/light-desc.png" alt="Favbet")
-      .welcome__belt
-        picture
-          source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-desc.png")
-          source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-tab.png")
-          source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-mob.png")
-          img(src="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-desc.png" alt="Favbet")
+      //.welcome__light
+      //  picture
+      //    source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-desc.png")
+      //    source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-tab.png")
+      //    source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/light-mob.png")
+      //    img(src="https://fav-prom.com/html/guessfight-hr/img/welcome/light-desc.png" alt="Favbet")
+      //.welcome__belt
+      //  picture
+      //    source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-desc.png")
+      //    source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-tab.png")
+      //    source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-mob.png")
+      //    img(src="https://fav-prom.com/html/guessfight-hr/img/welcome/belt-desc.png" alt="Favbet")
+      .welcome__img
+          picture
+            source(media="(min-width: 1025px) " srcset="../img/welcome/welcome-title-desc.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/welcome/welcome-title-tab.png")
+            source(media="(max-width: 550px)" srcset="../img/welcome/welcome-title-mob.png")
+            img(src="../img/welcome/welcome-title-desc.png" alt="Favbet")
+      .welcome__text(data-translate="welcomeText")
       .welcome__title(data-translate='welcomeTitle')
       a(href='/login/' role='button' data-translate='loginBtn').welcome__btn.custom-btn.unauth-msg
       a(href='/sports/event/boxing/39915601/' role='button' data-translate='betBtn').welcome__btn.custom-btn.took-part.hide
@@ -97,16 +104,8 @@
             .tableResults__body
       a(href='/login/' role='button' data-translate='loginBtn').result__link.custom-btn.unauth-msg
       a(href='/sports/event/boxing/39915601/' role='button' data-translate='betBtn').result__link.custom-btn.took-part.hide
-      //.result__sub(data-translate='resultSub')
+      .result__sub(data-translate='resultSub')
       details.custom-drop.result__drop
         summary.custom-drop-title(data-translate="mainDetails")
         .custom-drop-txt
           .custom-drop-txt-wrap(data-translate="mainDetailsTxt")
-
-
-
-
-
-
-
-
