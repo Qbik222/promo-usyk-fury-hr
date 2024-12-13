@@ -127,7 +127,6 @@
 
     function populateUsersTable(users, currentUserId, table) {
         table.innerHTML = '';
-        console.log(users)
         if (users && users.length) {
             const currentUser = userId && users.find(user => user.userid === currentUserId);
             if (currentUser) {
