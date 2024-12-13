@@ -11,47 +11,13 @@
 
     const hrLeng = document.querySelector('#hrLeng');
 
-    let locale = sessionStorage.getItem('locale') || 'en';
-
-    function setState(newLocale) {
-        locale = newLocale;
-        sessionStorage.setItem('locale', locale);
-    }
-    function toggleState() {
-        const newLocale = locale === 'en' ? 'hr' : 'en';
-        setState(newLocale);
-        window.location.reload()
-    }
-    document.querySelector('.en-btn').addEventListener('click', () => {
-        toggleState();
-
-    });
+    let locale = 'hr';
 
     if (hrLeng) locale = 'hr';
 
-    document.querySelector(".fav__page").classList.add(locale)
-
     let i18nData = {};
-    let userId = Number(sessionStorage.getItem('id')) || null;
-    console.log(userId)
+    let userId;
     // userId = 10101010;
-
-    document.querySelector(".betTrue").addEventListener("click", () =>{
-        sessionStorage.setItem('id', 1481239)
-        window.location.reload()
-    })
-    document.querySelector(".betFalse").addEventListener("click", () =>{
-        sessionStorage.setItem('id', 1481187)
-        window.location.reload()
-    })
-    document.querySelector(".unAuth").addEventListener("click", () =>{
-        sessionStorage.removeItem('id')
-        window.location.reload()
-    })
-    document.querySelector(".menu-btn").addEventListener("click", () =>{
-        document.querySelector(".menu-btns").classList.toggle("hide")
-    })
-
     const scorePrediction = {team : 1};
     const teamNamesById = [];
 
@@ -236,13 +202,6 @@
         return "**" + userId.toString().slice(2);
     }
 
-    // let checkUserAuth = () => {
-    //     if (userId) {
-    //         unauthMsgs.forEach(item => item.classList.add('hide'));
-    //         youAreInBtns.forEach(item => item.classList.remove('hide'));
-    //     }
-    // }
-
     function checkUserAuth() {
         return request(`/favuser/${userId}?nocache=1`)
             .then(res => {
@@ -322,8 +281,6 @@
         betWrap.classList.remove("hide")
         betTrue.classList.remove("active")
         betFalse.classList.remove("active")
-        // console.log(betWrap)
-
         if(bet){
             betTrue.classList.add("active")
         }else{
@@ -339,11 +296,4 @@
     if(currentDate >= PROMO_END_DATE) {
         predictionBtn.classList.add('blockBtn');
     }
-
-    const blackBtn = document.querySelector(".black-btn")
-
-    blackBtn.addEventListener("click", () =>{
-        document.body.classList.toggle("dark")
-    })
-
 })();
