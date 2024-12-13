@@ -201,7 +201,7 @@
         if (team) {
             forecastLogDiv.classList.remove('hide');
             const lastPredictionLabel = document.getElementById('roundWinner');
-            lastPredictionLabel.innerHTML = `<br>${team}`;
+            lastPredictionLabel.innerHTML = `${team}`;
         } else {
             forecastLogDiv.classList.add('hide');
         }
